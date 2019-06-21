@@ -6,6 +6,7 @@ const App = () => {
   return (
     <div className="messaging-wrapper">
       <div className="logo-container" />
+      {/* <ChannelList /> */}
       <MessageList />
     </div>
   );
