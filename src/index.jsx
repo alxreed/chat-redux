@@ -8,6 +8,7 @@ import reduxPromise from 'redux-promise';
 
 import identityReducer from './reducers/identity_reducer';
 import messagesReducer from './reducers/messages_reducer';
+import selectedChannelReducer from './reducers/selected_channel_reducer';
 
 
 // internal modules
@@ -28,7 +29,7 @@ const initialState = {
       created_at: "2017-09-26T23:03:21.194Z"
     }
   ],
-  channels: ['general', 'react', 'paris'],
+  channels: ['general', 'react', 'paris', 'lille', 'mouad-game'],
   currentUser: prompt("What is your username?") || `anonymous${Math.floor(10 + (Math.random() * 90))}`,
   selectedChannel: 'general'
 };
@@ -37,7 +38,7 @@ const reducers = combineReducers({
   messages: messagesReducer,
   channels: identityReducer,
   currentUser: identityReducer,
-  selectedChannel: identityReducer
+  selectedChannel: selectedChannelReducer
 });
 
 const middlewares = applyMiddleware(reduxPromise, logger);
